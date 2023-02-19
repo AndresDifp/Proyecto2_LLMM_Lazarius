@@ -1,0 +1,597 @@
+/*Se ha optado por un solo .css para facilitar la comprensión y principalmente para 
+realizar un diseño global lo más parecido posible en los elementos comunes de 
+todas las página del proyecto*/
+
+
+/*fuente importada de Google*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+/*el asterisco hace posible que lo que se engloba en sus corchetes se aplique a toda las páginas*/
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    /*efecto de transición que modifica aspectos tras situar el ratón sobre el elemento al que
+    se le aplica*/
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    /*propiedad que oculta todo lo que se sitúa fuera de una caja en concreto*/
+    overflow-x: hidden;
+}
+
+section {
+    padding: 3rem 9%;
+}
+
+#icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+/*propiedades de los botones*/
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: #e9edfb;
+    color: #22cf39;
+    cursor: pointer;
+    border-radius: .5rem;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    color: #fff;
+    background: #22cf39;
+}
+
+/*header*/
+.header {
+    /*propiedad que hace posible que el header siempre se quede fijo en la parte superior de la
+    ventana*/
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /*todas las propiedades que aparecen entre guiones son las mismas que las que le siguen. Es 
+    por ello que pueden ser eliminadas pero son útiles para que la visualización en 
+    navegadores antiguos (algo poco probable) sea posible*/
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 9%;
+    background: rgb(3, 87, 21);
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #fff;
+}
+
+.header .logo i {
+    color: crimson;
+}
+
+.header .navbar ul {
+    list-style: none;
+}
+
+.header .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.header .navbar ul li:hover ul {
+    display: block;
+}
+
+.header .navbar ul li a {
+    padding: 2rem;
+    display: block;
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+.header .navbar ul li a:hover {
+    background: crimson;
+}
+
+
+.header .navbar ul li ul li {
+    width: 100%;
+}
+
+#menu-btn {
+    cursor: pointer;
+    color: #fff;
+    font-size: 2.5rem;
+    display: none;
+}
+
+/*header*/
+/*bloque principal de la página index*/
+
+.inicio {
+    /*todas las propiedades que aparecen entre guiones son las mismas que las que le siguen. Es 
+    por ello que pueden ser eliminadas pero son útiles para que la visualización en 
+    navegadores antiguos (algo poco probable) sea posible*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.inicio .imagen {
+    -ms-flex: 15rem;
+    flex: 15rem;
+}
+
+.inicio .imagen img {
+    width: 100%;
+}
+
+.inicio .contenido {
+    -ms-flex: 1 1 42rem;
+    flex: 1 1 42rem;
+}
+
+.inicio .contenido h3 {
+    color: #302851;
+    font-size: 3.5rem;
+}
+
+.inicio .contenido p {
+    font-size: 1.4rem;
+    color: #666;
+    padding: 1rem 0;
+    /*distancia entre líneas*/
+    line-height: 2.5;
+}
+
+.categorias {
+    /*propiedad GRID para ubicar las categorías de la página principal*/
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    /*espacio entre columnas*/
+    gap: 1.5rem;
+}
+
+.categorias .caja {
+    border-radius: 1rem;
+    background: #f5f5f5;
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.categorias .caja img {
+    height: 7rem;
+    margin-bottom: 2rem;
+}
+
+.categorias .caja h3 {
+    font-size: 1.7rem;
+    color: #302851;
+}
+
+/*bloque principal de la página index*/
+
+/*sobre nosotros*/
+.sobre-mi {
+
+    /*todas las propiedades que aparecen entre guiones son las mismas que las que le siguen. Es 
+    por ello que pueden ser eliminadas pero son útiles para que la visualización en 
+    navegadores antiguos (algo poco probable) sea posible*/
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    /*propiedad FLEX para distribuir de forma efectiva la parte principal (texto e imagen)
+    de la página sobre nosotros*/
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.sobre-mi .imagen {
+    -ms-flex: 1 1 42rem;
+    /*rem es una unidad de medida de igual modo que los píxeles. Concretamente
+    1.25rem = 20px, ya que 1.25 × 16 = 20*/
+    flex: 1 1 42rem;
+}
+
+.sobre-mi .imagen img {
+    width: 100%;
+}
+
+.sobre-mi .contenido {
+    -ms-flex: 1 1 42rem;
+    flex: 1 1 42rem;
+}
+
+.sobre-mi .contenido h3 {
+    color: #302851;
+    font-size: 3.5rem;
+}
+
+.sobre-mi .contenido p {
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    color: #666;
+    line-height: 2.5;
+}
+
+/*sobre nosotros*/
+
+
+/*galería*/
+.galeria {
+
+    /*propiedad GRID para ubicar elementos*/
+    display: grid;
+    /*fr, fracción, es una unidad de medida que representa al espacio disponible*/
+    -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+    gap: 1.5rem;
+}
+
+.galeria .caja {
+    text-align: center;
+    overflow: hidden;
+}
+
+.galeria .caja:hover .video video {
+    /*hace posible que al reducir el tamaño de la página el vídeo adquiera una tamaño
+    escalable*/
+    transform: scale(1.1);
+}
+
+.galeria .caja .video {
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: .5rem;
+    position: relative;
+}
+
+.galeria .caja .video video {
+    height: 100%;
+    width: 100%;
+    /*hace posible que el vídeo ocupe el 100% del espacio disponible sin redimensionarse.
+    Para ello se recortan los laterales*/
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.galeria .caja .video i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    border-radius: 50%;
+    background: #fff;
+    color: #302851;
+    pointer-events: none;
+    /*gracias a esta propiedad, los elementos con mayor z-index, al superponerse con otros,
+    estos se sitúan por encima*/
+    z-index: 10;
+}
+
+.galeria .caja .contenido {
+    padding-top: 1rem;
+}
+
+.galeria .caja .contenido h3 {
+    font-size: 1.7rem;
+    color: #302851;
+    padding: .5rem 0;
+}
+
+.galeria .caja .contenido p {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+
+.main-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.7);
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.main-video.active {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+.main-video video {
+    width: 80%;
+    border: 0.5rem solid #fff;
+    border-radius: .5rem;
+}
+
+/*galería*/
+
+/*proyectos (llamado blog porque en un primer lugar esta sección iba a ser 
+un blog)*/
+.blog {
+    display: -ms-grid;
+    /*propiedad GRID para ubicar elementos*/
+    display: grid;
+    /*gracias a la propiedad auto-fit se completa todo el espacio disponible
+    mediante el espacio entre columnas. Aún así, todas las propiedades que se han utilizado y 
+    que están entre guiones, se pueden obviar pues tan solo se utilizan en navegadores 
+    obsoletos en los que las propiedades actuales (también usadas en este proyecto) no
+    se leen de forma correcta*/
+    -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+    gap: 1.5rem;
+}
+
+/*todas las imágenes y los contenedores que las contienen se han distribuido de la misma manera.
+    Mejora el aspecto global de la web y con un solo estilo se puede englobar todas*/
+.blog .caja .imagen {
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.blog .caja .imagen img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.blog .caja .contenido {
+    padding: 2rem;
+    background: #f5f5f5;
+}
+
+.blog .caja .contenido h3 {
+    font-size: 1.7rem;
+    padding: .5rem 0;
+    color: #302851;
+}
+
+.blog .caja .contenido p {
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    line-height: 2.5;
+    color: #666;
+}
+
+/*proyectos*/
+
+/*contacto (mapa y formulario)*/
+
+/*propiedad GRID utilizada para ubicar los elementos de contacto (iconos y texto)*/
+.contacto .iconos-contenedor {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.contacto .iconos-contenedor .icono {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: #f5f5f5;
+    margin-bottom: 2rem;
+}
+
+/*propiedades de los iconos */
+.contacto .iconos-contenedor .icono i {
+    height: 6.5rem;
+    width: 6.5rem;
+    line-height: 6.5rem;
+    font-size: 2.5rem;
+    color: #224bcf;
+    background: #e9edfb;
+    border-radius: 50%;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.contacto .iconos-contenedor .icono h3 {
+    font-size: 2rem;
+    color: #302851;
+    padding: .7rem 0;
+}
+
+.contacto .iconos-contenedor .icono p {
+    line-height: 2;
+    font-size: 1.4rem;
+    color: #666;
+}
+
+/*gracias a esta propiedad, la distribución de los enlaces del mapa se
+sitúan bajo este en una sola línea*/
+.contacto .fila {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/*propiedades del mapa*/
+.contacto .fila .map {
+    -ms-flex: 1 1 42rem;
+    flex: 1 1 42rem;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+/*propiedades del formulario*/
+.formulario {
+    margin-left: 9%;
+    margin-right: 9%;
+    margin-bottom: 3%;
+
+}
+
+/*se ha empleado FLEX para ubicar los elementos uno debajo de otro*/
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/*propiedades de las cajas del formulario*/
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/*propiedades del botón "enviar" del formulario*/
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #2d6631;
+}
+
+/*contacto (mapa y formulario)*/
+
+/*footer*/
+.footer {
+    background: #f5f5f5;
+}
+
+/*distribución de los elementos en dos columnas con un GRID*/
+.footer .caja-contenedor {
+    display: grid;
+    -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+}
+
+/*propiedades de los enlaces del footer. Todos han sido considerados del mismo
+modo*/
+.footer .caja-contenedor .caja a {
+    display: block;
+    font-size: 1.7rem;
+    color: #666;
+}
+
+.footer .caja-contenedor .caja a:hover {
+    color: crimson;
+}
+
+/*gracias a esta propiedad se produce un efecto tras pasar el ratón sobre estos*/
+.footer .caja-contenedor .caja a:hover i {
+    padding-right: 2rem;
+}
+
+.footer .caja-contenedor .caja a i {
+    color: crimson;
+    padding-right: .5rem;
+}
+
+/*footer*/
+
+/*propiedades RESPONSIVE*/
+/*punto de ruptura*/
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
+/*punto de ruptura*/
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    /*propiedad que hace posible que el menú se achique y desaparezca el menú*/
+    .header .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .about .content h3 {
+        font-size: 3rem;
+    }
+
+    /*los porcentajes hacen posible la reducción de forma eficiente*/
+    .main-video video {
+        width: 95%;
+        border-width: .2rem;
+    }
+}
+
+/*punto de ruptura*/
+@media (max-width: 200px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+/*propiedades RESPONSIVE*/
